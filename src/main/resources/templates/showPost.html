@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/showPost.css}">
+	</head>
+		<body>
+			
+        	
+        	
+        	
+        	<div th:each="post : ${allPosts}">
+				    <p><strong>caption:</strong> <span th:text="${post.caption}"></span></p>
+					    <div class="container-photo">
+					        <p><strong>Photo:</strong></p>
+					        <img th:if="${post.photoBase64 != null and post.photoBase64 != ''}" 
+					         th:src=" 'data:image/jpeg;base64,' + ${post.photoBase64}" 
+					          alt="Profile Photo"/>
+							<p th:if="${post.photoBase64 == null or post.photoBase64 == ''}">No Photo Available</p>
+					        
+					    </div>
+			 </div>
+		</body>
+</html>

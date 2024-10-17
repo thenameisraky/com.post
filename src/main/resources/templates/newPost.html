@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Insert title here</title>
+		<link rel="stylesheet" type="text/css" th:href="@{/post.css}">
+	</head>
+		<body>
+			<div class="container">
+		        <form action="/createPost" method="post" enctype="multipart/form-data">
+		            <label for="caption">Caption:</label>
+		            <textarea name="caption" id=""></textarea>
+		            <label for="photo">Photo</label>
+		            <input type="file" name="photo" accept="image/*">
+		            <input type="submit" value="Post">
+		        </form>
+   		   </div>
+		</body>
+</html>
